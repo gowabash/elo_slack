@@ -1,9 +1,8 @@
-require 'slack-ruby-bot'
+#! /usr/bin/env ruby
 
-class PongBot < SlackRubyBot::Bot
-  command 'leaders' do |client, data, match|
-    client.say(text: 'Matt is winnig, of course', channel: data.channel)
-  end
-end
+require 'bundler'
+Bundler.require
 
-PongBot.run
+require_relative 'elo_bot'
+
+EloBot.run
