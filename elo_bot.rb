@@ -3,7 +3,10 @@ require_relative 'leader'
 
 class EloBot < SlackRubyBot::Bot
   command 'help' do |client, data, match|
-
+    help = "Possible commands\n"
+    help += "  leaderboard - show the current leaderboard\n"
+    help += "  X lost to Y A-B - record a loss"
+    client.say(text: help, channel: data.channel)
   end
 
   command 'leaderboard' do |client, data, match|
