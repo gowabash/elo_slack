@@ -23,10 +23,10 @@ class EloBot < SlackRubyBot::Bot
   end
 
   command 'taunt x', /.*taunt.*/ do |client, data, match|
-    client.say(channel: data.channel, text: Giphy.random(tag: 'taunt'))
+    client.say(channel: data.channel, text: Elo::Giphy.random(tag: 'taunt'))
   end
 
   command 'challenge x', /.*challenge.*/ do |client, data, match|
-    client.say(channel: data.channel, text: Giphy.random(tag: 'challenge'))
+    client.say(channel: data.channel, text: Elo::Giphy.random(tag: 'challenge'))
   end
 end
